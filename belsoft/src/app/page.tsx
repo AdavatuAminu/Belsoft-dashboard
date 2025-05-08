@@ -21,7 +21,8 @@ export default function Home() {
           </div>
 
           <main className="-mt-2 p-6 overflow-y-auto overflow-x-hidden bg-[#F7F4F4] rounded-xl h-[944px] w-[1350px]">
-          <div className="grid grid-cols-2 gap-6 mt-6">
+          <span className='text-[30px] font-semibold text-blue-900'>Overview</span>
+          <div className="grid grid-cols-2 gap-12 mt-6">
             <RevenueChart />
             <PerformanceDashboard />
             </div>

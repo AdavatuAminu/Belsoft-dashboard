@@ -1,65 +1,65 @@
+"use client";
+
+import {
+    BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
+} from 'recharts';
+import Image from 'next/image';
+
+const data = [
+    { month: 'January', yellow: 25, blue: 40 },
+    { month: 'February', yellow: 90, blue: 55 },
+    { month: 'March', yellow: 10, blue: 60 },
+    { month: 'April', yellow: 70, blue: 45 },
+    { month: 'May', yellow: 60, blue: 48 },
+    { month: 'June', yellow: 30, blue: 40 },
+    { month: 'July', yellow: 65, blue: 100 },
+    { month: 'August', yellow: 50, blue: 70 },
+    { month: 'September', yellow: 40, blue: 85 },
+    { month: 'October', yellow: 58, blue: 15 },
+    { month: 'November', yellow: 8, blue: 75 },
+    { month: 'December', yellow: 20, blue: 35 },
+];
+
+
 export default function RevenueChart() {
     return (
-        <section className="bg-white p-6 rounded-lg shadow-md w-[670px]">
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-2xl font-semibold text-[#070F65]">Revenue Overview</h2>
-          <button className="border border-[#070F65] text-[#070F65] px-3 py-1 rounded flex items-center">
-            For every month
-            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-        </div>
-        <div className="relative w-full h-80">
-          {/* Grid background */}
-          <div className="absolute inset-0 grid grid-rows-5 border-t border-l">
-            <div className="border-b border-gray-200"></div>
-            <div className="border-b border-gray-200"></div>
-            <div className="border-b border-gray-200"></div>
-            <div className="border-b border-gray-200"></div>
-            <div className="border-b border-gray-200"></div>
-          </div>
-          {/* Y-axis labels */}
-          <div className="absolute left-0 top-0 h-full flex flex-col justify-between text-[#070F65] text-sm">
-            <span className="mt-1">1000</span>
-            <span>750</span>
-            <span>500</span>
-            <span>250</span>
-            <span className="mb-1">0</span>
-          </div>
-          {/* Chart bars */}
-          <div className="relative flex items-end justify-between h-full pl-8 pr-4">
-            <div className="w-10 h-24 bg-yellow-400 relative">
-              <div className="absolute bottom-full text-red-700 bg-red-500 text-white px-2 py-1 rounded -mb-2">A fall in revenue</div>
+        <div className="bg-white p-6 rounded-3xl relative w-[670px] h-[299px]">
+            <div className="flex justify-between items-center mb-4">
+                <h2 className="text-[20px] font-semibold text-blue-900">Revenue Overview</h2>
+                <button className="flex items-center gap-2 border border-blue-900 text-blue-900 px-4 py-2 rounded-2xl text-[12px]">
+                    For every month
+                    <Image src="/Vector 1.png" alt="Vector Logo" width={12} height={12} priority />
+                </button>
+
             </div>
-            <div className="w-10 h-40 bg-blue-400"></div>
-            <div className="w-10 h-72 bg-yellow-400"></div>
-            <div className="w-10 h-48 bg-blue-400"></div>
-            <div className="w-10 h-52 bg-yellow-400"></div>
-            <div className="w-10 h-36 bg-blue-400"></div>
-            <div className="w-10 h-40 bg-yellow-400"></div>
-            <div className="w-10 h-96 bg-blue-400 relative">
-              <div className="absolute bottom-full text-green-700 bg-green-600 text-white px-2 py-1 rounded -mb-2">A rise in revenue</div>
+
+            {/* Annotation: Fall in revenue */}
+            <div className="absolute left-[170px] top-[90px] bg-red-700 text-white text-[12px] px-4 py-2 rounded-md font-medium shadow-md z-10 w-[108px] h-[40px] whitespace-nowrap justify-center flex items-center">
+                A fall in revenue
             </div>
-            <div className="w-10 h-16 bg-yellow-400"></div>
-            <div className="w-10 h-80 bg-blue-400"></div>
-            <div className="w-10 h-24 bg-yellow-400"></div>
-            <div className="w-10 h-48 bg-blue-400"></div>
-          </div>
+
+            {/* Annotation: Rise in revenue */}
+            <div className="absolute left-[400px] top-[80px] bg-green-700 text-white text-[12px] px-4 py-2 rounded-md font-medium shadow-md z-10 w-[108px] h-[40px] whitespace-nowrap justify-center flex items-center">
+                A rise in revenue
+            </div>
+
+
+            <ResponsiveContainer width="100%" height="90%">
+                <BarChart data={data} barGap={10}>
+                    <CartesianGrid stroke="#ccc" strokeDasharray="0" />
+                    <XAxis
+                        dataKey="month"
+                        stroke="#0a0a55"
+                        interval={0}
+                        tick={{ fontSize: 10 }}
+                    />
+
+                    <YAxis stroke="#0a0a55" />
+                    <Tooltip />
+                    <Bar dataKey="yellow" fill="yellow" />
+                    <Bar dataKey="blue" fill="royalblue" />
+                </BarChart>
+            </ResponsiveContainer>
         </div>
-        {/* X-axis labels */}
-        <div className="flex justify-between mt-2 text-[#070F65] text-sm">
-          <span>January</span>
-          <span>February</span>
-          <span>March</span>
-          <span>April</span>
-          <span>May</span>
-          <span>July</span>
-          <span>September</span>
-          <span>October</span>
-          <span>November</span>
-          <span>December</span>
-        </div>
-      </section>
-    )
-  }
+    );
+}
