@@ -4,7 +4,7 @@ import Image from 'next/image';
 export default function PerformanceDashboard() {
   return (
     <div className="p-6 bg-white w-[514px] h-auto rounded-lg">
-      <h1 className="text-3xl font-bold text-blue-900 mb-6">Performance</h1>
+      <h1 className="text-[20px] font-bold text-blue-900 mb-6">Performance</h1>
 
       <div className="grid grid-cols-2 gap-6">
         {/* LEFT COLUMN */}

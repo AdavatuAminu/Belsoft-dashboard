@@ -10,7 +10,7 @@ export default function Sidebar() {
                 {/* Logo */}
                 <div className="flex justify-center py-6">
                     <Link href="/admin/overview">
-                        <Image src="/KONNECTU  4.png" alt="KonnectU Logo" width={140} height={70} priority />
+                        <Image src="/KONNECTU  4.png" alt="KonnectU Logo" width={120} height={50} priority />
                     </Link>
                 </div>
 

@@ -6,6 +6,7 @@ import JobOversight from '../components/JobOversight'
 import AccountManagement from '../components/AccountManagement'
 import Sidebar from '@/components/Sidebar'
 import PerformanceDashboard from '@/components/PerformanceDashboard'
+import PopularTaskSpecialist from '@/components/PopularTaskSpecialist'
 
 export default function Home() {
   return (
@@ -24,11 +25,16 @@ export default function Home() {
           <span className='text-[30px] font-semibold text-blue-900'>Overview</span>
           <div className="grid grid-cols-2 gap-12 mt-6">
             <RevenueChart />
+            <div className="-mt-6">
             <PerformanceDashboard />
             </div>
-            <div className="grid grid-cols-2 gap-6 mt-12">
+            </div>
+            <div className="grid grid-cols-2 gap-6 mt-5">
+            <div className="-mt-8">
               <JobOversight />
+              </div>
               <AccountManagement />
+              <PopularTaskSpecialist />
             </div>
           </main>
         </div>
