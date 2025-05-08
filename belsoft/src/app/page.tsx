@@ -5,6 +5,7 @@ import RevenueChart from '../components/RevenueChart'
 import JobOversight from '../components/JobOversight'
 import AccountManagement from '../components/AccountManagement'
 import Sidebar from '@/components/Sidebar'
+import PerformanceDashboard from '@/components/PerformanceDashboard'
 
 export default function Home() {
   return (
@@ -20,8 +21,11 @@ export default function Home() {
           </div>
 
           <main className="-mt-2 p-6 overflow-y-auto overflow-x-hidden bg-[#F7F4F4] rounded-xl h-[944px] w-[1350px]">
+          <div className="grid grid-cols-2 gap-6 mt-6">
             <RevenueChart />
-            <div className="grid grid-cols-2 gap-6 mt-6">
+            <PerformanceDashboard />
+            </div>
+            <div className="grid grid-cols-2 gap-6 mt-12">
               <JobOversight />
               <AccountManagement />
             </div>
