@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function AccountManagement() {
   return (
-    <section className="bg-white p-6 rounded-lg shadow-md w-[554px] h-[321px]">
+    <section className="bg-white p-6 rounded-lg shadow-mdw-full max-w-[554px] h-auto min-h-[321px]">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-[20px] font-bold">Account Management</h2>
         <a href="#" className="text-[#006A05] flex items-center text-[10px]">

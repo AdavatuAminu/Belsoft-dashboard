@@ -23,7 +23,7 @@ const data = [
 
 export default function RevenueChart() {
     return (
-        <div className="bg-white p-6 rounded-3xl relative w-[670px] h-[299px]">
+        <div className="bg-white p-6 rounded-3xl relative w-full max-w-[670px] h-[250px] md:h-[299px]">
             <div className="flex justify-between items-center mb-4">
                 <h2 className="text-[20px] font-semibold text-blue-900">Revenue Overview</h2>
                 <button className="flex items-center gap-2 border border-blue-900 text-blue-900 px-4 py-2 rounded-2xl text-[12px]">
@@ -33,16 +33,16 @@ export default function RevenueChart() {
 
             </div>
 
-            {/* Annotation: Fall in revenue */}
+           
+            
             <div className="absolute left-[170px] top-[90px] bg-red-700 text-white text-[12px] px-4 py-2 rounded-md font-medium shadow-md z-10 w-[108px] h-[40px] whitespace-nowrap justify-center flex items-center">
                 A fall in revenue
             </div>
 
-            {/* Annotation: Rise in revenue */}
+          
             <div className="absolute left-[400px] top-[80px] bg-green-700 text-white text-[12px] px-4 py-2 rounded-md font-medium shadow-md z-10 w-[108px] h-[40px] whitespace-nowrap justify-center flex items-center">
                 A rise in revenue
             </div>
-
 
             <ResponsiveContainer width="100%" height="90%">
                 <BarChart data={data} barGap={10}>
@@ -60,6 +60,7 @@ export default function RevenueChart() {
                     <Bar dataKey="blue" fill="royalblue" />
                 </BarChart>
             </ResponsiveContainer>
-        </div>
+            </div>
+      
     );
 }

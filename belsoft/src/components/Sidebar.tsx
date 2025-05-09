@@ -5,16 +5,16 @@ import Link from 'next/link';
 
 export default function Sidebar() {
     return (
-        <aside className="w-[195px] h-[1006px] bg-[#F7F4F4] flex flex-col justify-between rounded-xl items-center">
+        <aside className="w-[180px] md:w-[195px] min-h-[1006px] bg-[#F7F4F4] flex flex-col justify-between rounded-xl items-center">
             <div>
-                {/* Logo */}
+              
                 <div className="flex justify-center py-6">
                     <Link href="/admin/overview">
                         <Image src="/KONNECTU  4.png" alt="KonnectU Logo" width={120} height={50} priority />
                     </Link>
                 </div>
 
-                {/* Main Navigation */}
+            
                 <nav className="flex flex-col gap-3 px-2 w-[173px] whitespace-nowrap">
                     <SidebarItem
                         icon={
@@ -46,7 +46,6 @@ export default function Sidebar() {
                             height={14}
                         />} label="Account manage..." />
 
-                    {/* Sub-items */}
                     <div className="ml-6 text-[#678D58] space-y-2 mt-1">
                         <SubItem
                             icon={
@@ -106,7 +105,6 @@ export default function Sidebar() {
                 </nav>
             </div>
 
-            {/* Footer Navigation */}
             <nav className="flex flex-col gap-3 px-4 pb-4 w-[173px]">
                 <SidebarItem
                     icon=
@@ -129,7 +127,6 @@ export default function Sidebar() {
     );
 }
 
-// Sidebar item component
 function SidebarItem({
     icon,
     label,
@@ -152,7 +149,6 @@ function SidebarItem({
     );
 }
 
-// Sub-item (for indented children)
 function SubItem({ icon, label }: { icon: React.ReactNode; label: string }) {
     return (
       <div className="flex items-center gap-2 text-sm">

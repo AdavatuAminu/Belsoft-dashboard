@@ -4,14 +4,12 @@ import { Star } from 'lucide-react';
 
 export default function PerformanceDashboard() {
   return (
-    <div className="p-6 bg-white w-[514px] h-auto rounded-lg">
+    <div className="p-6 bg-white w-full max-w-[514px] rounded-lg">
       <h1 className="text-[20px] font-bold text-blue-900 mb-6">Performance</h1>
 
       <div className="grid grid-cols-2 gap-6">
-        {/* LEFT COLUMN */}
         <div className="space-y-6">
-          {/* Total User Section */}
-          <div className="bg-[#F7F4F4] p-6 rounded-lg w-[176px] h-[157px] flex flex-col items-center justify-center">
+          <div className="bg-[#F7F4F4] p-6 rounded-lg w-full max-w-[176px] md:max-w-[216px] h-[157px] flex flex-col items-center justify-center">
             <h2 className="text-[14px] font-semibold text-blue-900">Total User</h2>
             <div className="flex items-center mt-2">
               <span className="text-[24px] font-bold text-blue-900">2K</span>
@@ -30,8 +28,7 @@ export default function PerformanceDashboard() {
             </div>
           </div>
 
-          {/* Rating Section */}
-          <div className="flex items-center w-[176px] h-[71px] mt-12">
+          <div className="flex items-center w-full max-w-[176px] md:max-w-[216px] h-[71px] mt-12">
             <div className="w-[54px] h-[54px] bg-orange-400 rounded-[20px] flex items-center justify-center text-white text-[12.42px] font-normal">65%</div>
             <div className="bg-[#f9f9f9] rounded-xl p-3 shadow-sm flex flex-col items-center justify-center w-[106px] h-[71px] whitespace-nowrap ml-4">
               <div className="flex -space-x-3 mb-1">
@@ -50,10 +47,8 @@ export default function PerformanceDashboard() {
           </div>
         </div>
 
-        {/* RIGHT COLUMN */}
         <div className="space-y-6">
-          {/* Total Resolved Disputes Section */}
-          <div className="bg-[#F7F4F4] p-6 rounded-lg w-[216px] h-[81px] flex flex-col items-center justify-center text-center">
+          <div className="bg-[#F7F4F4] p-6 rounded-lg w-full max-w-[176px] md:max-w-[216px] h-[81px] flex flex-col items-center justify-center text-center">
             <h2 className="text-[14px] font-semibold text-blue-900">Total Resolved Disputes</h2>
             <div className="flex items-center mt-1">
               <span className="text-[24px] font-bold text-blue-900">25%</span>
@@ -62,8 +57,7 @@ export default function PerformanceDashboard() {
             </div>
           </div>
 
-          {/* Total Unresolved Disputes Section */}
-          <div className="bg-white p-4 shadow-md rounded-lg w-[216px] h-[183px] flex flex-col items-center justify-center text-center whitespace-nowrap">
+          <div className="bg-white p-4 shadow-md rounded-lg w-full max-w-[176px] md:max-w-[216px] h-[183px] flex flex-col items-center justify-center text-center whitespace-nowrap">
             <h2 className="text-[14px] font-semibold text-black">Total Unresolved Disputes</h2>
             <div className="flex items-center mt-2">
               <span className="text-[24px] font-bold text-black">75%</span>
