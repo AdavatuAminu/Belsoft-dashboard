@@ -1,0 +1,10 @@
+The KonnectU Admin Dashboard is a Next.js-based application that provides an administrative interface for managing jobs, revenue, performance, and user accounts, 
+featuring a responsive design with interactive elements like dropdowns, charts, and a collapsible sidebar, optimized for desktop and mobile devices. It leverages 
+technologies such as Tailwind CSS for styling, Recharts for charting, and React hooks for state management, requiring Node.js (v14.x or later) and npm/yarn for 
+installation, which involves cloning the repository, installing dependencies with `npm install`, and running the development server with `npm run dev` to access 
+it at `http://localhost:3000`. The dashboard includes components like `Header` for search and sorting, `Sidebar` for navigation, `RevenueChart` for financial insights, 
+`JobOversight` for job management with filterable dropdowns, `AccountManagement` for user control, `PerformanceDashboard` for metrics, and `PopularTaskSpecialist` for 
+highlighting top-rated specialists, all organized in a file structure with `components/`, `pages/`, and `public/` directories. The project supports responsive design 
+using Tailwind CSS prefixes, ensuring adaptability across screen sizes.
+
+Link to the hosted site on vercel: "https://belsoft-dashboard-6h7ooqea7-adavatuaminus-projects.vercel.app/"
