@@ -3,45 +3,43 @@ import Image from 'next/image';
 
 export default function TaskSpecialistCard() {
   return (
-    <div className="bg-white rounded-[40px] shadow-sm p-6 flex justify-between items-start w-[554px] h-[108px]">
+    <div className="bg-white rounded-xl shadow-sm p-6 flex justify-between items-start w-[554px] h-[108px]">
       {/* Left Section */}
-      <div className="space-y-4">
+      <div className="space-y-4 -mt-3">
         <h2 className="text-[20px] font-bold text-[#0a0a55]">Popular Task Specialist</h2>
 
         {/* Progress Bars */}
-        <div className="space-y-3">
+        <div className="grid grid-cols-2">
           {/* Task Completion */}
           <div>
             <p className="text-[10px] font-medium text-[#0a0a55]">Task Completion In Due Date</p>
-            <div className="w-64 h-4 bg-gray-200 rounded-full overflow-hidden mt-1">
-              <div className="bg-green-700 h-full w-[80%] rounded-full"></div>
+            <div className="w-64 h-4 overflow-hidden mt-1">
+              <Image src="/red bar.png" alt="green bar" width={120} height={50} priority />
             </div>
-            <span className="text-xs text-gray-600 ml-2">80%</span>
           </div>
 
           {/* Uncompleted Task */}
           <div>
             <p className="text-[10px] font-medium text-[#0a0a55]">Uncompleted task</p>
-            <div className="w-64 h-4 bg-gray-200 rounded-full overflow-hidden mt-1">
-              <div className="bg-red-700 h-full w-[20%] rounded-full"></div>
+            <div className="w-64 h-4 overflow-hidden mt-1">
+            <Image src="/Frame 277.png" alt="red bar" width={120} height={50} priority />
             </div>
-            <span className="text-xs text-gray-600 ml-2">20%</span>
           </div>
         </div>
       </div>
 
       {/* Right Section */}
-      <div className="bg-[#f9f9f9] rounded-xl p-3 shadow-sm flex flex-col items-center h-[106px] w-[71px]">
-        <div className="flex -space-x-2 overflow-hidden mb-1">
-          <Image src="/avatar1.png" alt="avatar1" width={30} height={30} className="rounded-full border-2 border-white" />
-          <Image src="/avatar2.png" alt="avatar2" width={30} height={30} className="rounded-full border-2 border-white" />
-          <Image src="/avatar3.png" alt="avatar3" width={30} height={30} className="rounded-full border-2 border-white" />
-          <span className="text-sm font-semibold ml-2 mt-1 text-[#0a0a55]">+100</span>
+      <div className="bg-[#f9f9f9] rounded-xl p-3 shadow-sm flex flex-col items-center justify-center w-[106px] h-[71px] whitespace-nowrap">
+        <div className="flex -space-x-3 mb-1">
+          <Image src="/Ellipse 18.png" alt="avatar1" width={26} height={26} className="rounded-full" />
+          <Image src="/Ellipse 19.png" alt="avatar2" width={26} height={26} className="rounded-full" />
+          <Image src="/Ellipse 20.png" alt="avatar3" width={26} height={26} className="rounded-full" />
+          <span className="text-[10px] font-normal ml-2 mt-1 text-[#0a0a55]">+100</span>
         </div>
-        <p className="text-sm text-[#0a0a55] font-medium">Most rated</p>
-        <div className="flex space-x-1 text-yellow-400 mt-1">
+        <p className="text-[10px] text-[#0a0a55] font-medium">Most rated</p>
+        <div className="flex space-x-1 text-yellow-400 mt-1 w-[67px] h-[17px]">
           {Array(4).fill(0).map((_, i) => (
-            <Star key={i} size={16} fill="currentColor" stroke="none" />
+            <Star key={i} size={16} fill="none" stroke="currentColor" strokeWidth={4}/>
           ))}
         </div>
       </div>

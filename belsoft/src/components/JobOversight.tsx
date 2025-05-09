@@ -89,8 +89,8 @@ export default function JobOversight() {
             </div>
             <div className="space-y-6">
                 <div className="flex items-center mb-1">
-                    <div className="w-6 h-6 bg-gray-200 rounded-full mr-2"></div>
-                    <strong className="text-blue-900 text-[11px]">Mack Zuckerberg</strong>
+                <Image src="/Frame 202 (1).png" alt="avatar3" width={26} height={26} />
+                    <strong className="text-blue-900 text-[11px] ml-3">Mack Zuckerberg</strong>
                 </div>
                 <h3 className="text-[16px] font-semibold text-blue-900">Install Security Cameras for TechHub</h3>
                 <p className="text-gray-600 text-[12px] -mt-6">Budget: N4000</p>
@@ -127,8 +127,8 @@ export default function JobOversight() {
                 </div>
                 </div>
                 <div className="flex items-center mb-1">
-                    <div className="w-6 h-6 bg-gray-200 rounded-full mr-2"></div>
-                    <strong className="text-blue-900 text-[11px]">Mack Zuckerberg</strong>
+                    <Image src="/Frame 202.png" alt="avatar3" width={26} height={26} />
+                    <strong className="text-blue-900 text-[11px] ml-3">Mack Zuckerberg</strong>
                 </div>
                 <h3 className="text-[16px] font-semibold text-blue-900">Install Security Cameras for TechHub</h3>
                 <p className="text-gray-600 text-[12px] -mt-6">Budget: N4000</p>
