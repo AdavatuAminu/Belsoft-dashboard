@@ -8,7 +8,6 @@ export default function JobOversight() {
     const dateDropdownRef = useRef(null);
     const jobDropdownRef = useRef(null);
 
-    // Close dropdowns when clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (dateDropdownRef.current && !dateDropdownRef.current.contains(event.target)) {
@@ -30,7 +29,7 @@ export default function JobOversight() {
                 <h2 className="text-[20px] font-bold text-blue-900">Job Oversight</h2>
             </div>
             <div className="flex space-x-4 mb-6">
-                <input type="text" placeholder="Search for Jobs" className="p-2 border rounded-lg w-full text-blue-900 placeholder-blue-900 focus:outline-none w-[246px] h-[33px]" />
+                <input type="text" placeholder="Search for Jobs" className="p-2 border rounded-lg w-full text-blue-900 placeholder-blue-900 focus:outline-none text-[12px] w-[246px] h-[33px]" />
                 <button className="p-2 border rounded-lg bg-white text-blue-900 text-[10px] w-[56px] h-[33px]">Filter</button>
                 <div className="relative" ref={dateDropdownRef}>
                     <button
@@ -43,20 +42,24 @@ export default function JobOversight() {
                         </svg>
                     </button>
                     {isDateDropdownOpen && (
-                        <div className="absolute top-full mt-2 bg-white border rounded-lg shadow-lg p-2 w-40 z-10">
-                            <label className="flex items-center mb-2">
-                                <input type="radio" name="date" className="mr-2" /> Last 1 Week
-                            </label>
-                            <label className="flex items-center mb-2">
-                                <input type="radio" name="date" className="mr-2" /> Last 2 Weeks
-                            </label>
-                            <label className="flex items-center mb-2">
-                                <input type="radio" name="date" className="mr-2" /> Last Month
-                            </label>
-                            <label className="flex items-center">
-                                <input type="radio" name="date" className="mr-2" /> Last 5 Months
-                            </label>
+                        <div className="absolute top-full mt-2 bg-white border border-[#0a0a55] rounded-[20px] shadow-[0_4px_20px_rgba(0,0,0,0.2)] w-[113px] h-[117px] z-10 text-[#0a0a55] font-semibold text-[10px] overflow-hidden flex flex-col justify-center">
+                            {["Last 1 Week", "Last 2 Weeks", "Last Month", "Last 5 Months"].map((label, index) => (
+                                <label
+                                    key={label}
+                                    className={`flex items-center whitespace-nowrap gap-2 py-1 px-2 cursor-pointer ${index > 0 ? "border-t border-[#0a0a55]" : ""}`}
+                                >
+                                    <input
+                                        type="radio"
+                                        name="date"
+                                        value={label}
+                                        className="appearance-none w-4 h-4 border-2 border-[#0a0a55] rounded-full relative focus:outline-none checked:bg-transparent checked:border-[#0a0a55] checked:after:content-[''] checked:after:absolute checked:after:w-2 checked:after:h-2 checked:after:bg-[#0a0a55] checked:after:rounded-full checked:after:top-[2px] checked:after:left-[2px]"
+                                        defaultChecked={index === 0}
+                                    />
+                                    <span>{label}</span>
+                                </label>
+                            ))}
                         </div>
+
                     )}
                 </div>
                 <div className="relative" ref={jobDropdownRef}>
@@ -70,26 +73,28 @@ export default function JobOversight() {
                         </svg>
                     </button>
                     {isJobDropdownOpen && (
-                        <div className="absolute top-full mt-2 bg-white border rounded-lg shadow-lg p-2 w-40 z-10">
-                            <label className="flex items-center mb-2">
-                                <input type="radio" name="jobType" className="mr-2" /> Technological jobs
-                            </label>
-                            <label className="flex items-center mb-2">
-                                <input type="radio" name="jobType" className="mr-2" /> Business jobs
-                            </label>
-                            <label className="flex items-center mb-2">
-                                <input type="radio" name="jobType" className="mr-2" /> Handy jobs
-                            </label>
-                            <label className="flex items-center">
-                                <input type="radio" name="jobType" className="mr-2" /> Scientific jobs
-                            </label>
-                        </div>
+                        <div className="absolute top-full mt-2 bg-white border border-[#0a0a55] rounded-[20px] shadow-[0_4px_20px_rgba(0,0,0,0.2)] w-[150px] h-[117px] z-10 text-[#0a0a55] font-semibold text-[10px] overflow-hidden flex flex-col justify-center">
+                        {["Technological jobs", "Business jobs", "Handy jobs", "Scientific jobs"].map((label, index) => (
+                          <label
+                            key={label}
+                            className={`flex items-center whitespace-nowrap gap-2 py-[6px] px-3 cursor-pointer ${index > 0 ? "border-t border-[#0a0a55]" : ""}`}
+                          >
+                            <input
+                              type="radio"
+                              name="jobType"
+                              value={label}
+                              className="appearance-none w-4 h-4 border-2 border-[#0a0a55] rounded-full relative focus:outline-none checked:bg-transparent checked:border-[#0a0a55] checked:after:content-[''] checked:after:absolute checked:after:w-2 checked:after:h-2 checked:after:bg-[#0a0a55] checked:after:rounded-full checked:after:top-[2px] checked:after:left-[2px]"
+                            />
+                            <span>{label}</span>
+                          </label>
+                        ))}
+                      </div>
                     )}
                 </div>
             </div>
             <div className="space-y-6">
                 <div className="flex items-center mb-1">
-                <Image src="/Frame 202 (1).png" alt="avatar3" width={26} height={26} />
+                    <Image src="/Frame 202 (1).png" alt="avatar3" width={26} height={26} />
                     <strong className="text-blue-900 text-[11px] ml-3">Mack Zuckerberg</strong>
                 </div>
                 <h3 className="text-[16px] font-semibold text-blue-900">Install Security Cameras for TechHub</h3>
@@ -99,32 +104,32 @@ export default function JobOversight() {
                         A growing tech company needs a technician to install 6 CCTV cameras in their office space. The job requires running cables through walls and configuring the security system.
                     </p>
                     <a href="#" className="text-blue-500 text-[11px]">View More...</a>
-                
 
-                <div className="flex items-center mt-2 text-gray-600 text-[11px]">
-                    <Image
-                        src="/location.png"
-                        alt="Location Icon"
-                        width={12}
-                        height={12}
-                        className="mr-1"
-                    />
-                    Lagos, Nigeria
-                    <Image
-                        src="/tabler_flag.png"
-                        alt="Heart Icon"
-                        width={12}
-                        height={12}
-                        className="ml-2"
-                    />
-                    <Image
-                        src="/tdesign_heart.png"
-                        alt="Heart Icon"
-                        width={12}
-                        height={12}
-                        className="ml-2"
-                    />
-                </div>
+
+                    <div className="flex items-center mt-2 text-gray-600 text-[11px]">
+                        <Image
+                            src="/location.png"
+                            alt="Location Icon"
+                            width={12}
+                            height={12}
+                            className="mr-1"
+                        />
+                        Lagos, Nigeria
+                        <Image
+                            src="/tabler_flag.png"
+                            alt="Heart Icon"
+                            width={12}
+                            height={12}
+                            className="ml-2"
+                        />
+                        <Image
+                            src="/tdesign_heart.png"
+                            alt="Heart Icon"
+                            width={12}
+                            height={12}
+                            className="ml-2"
+                        />
+                    </div>
                 </div>
                 <div className="flex items-center mb-1">
                     <Image src="/Frame 202.png" alt="avatar3" width={26} height={26} />
@@ -137,32 +142,32 @@ export default function JobOversight() {
                         A growing tech company needs a technician to install 6 CCTV cameras in their office space. The job requires running cables through walls and configuring the security system.
                     </p>
                     <a href="#" className="text-blue-500 text-[11px]">View More...</a>
-               
 
-                <div className="flex items-center mt-2 text-gray-600 text-[11px]">
-                    <Image
-                        src="/location.png"
-                        alt="Location Icon"
-                        width={12}
-                        height={12}
-                        className="mr-1"
-                    />
-                    Lagos, Nigeria
-                    <Image
-                        src="/tabler_flag.png"
-                        alt="Heart Icon"
-                        width={12}
-                        height={12}
-                        className="ml-2"
-                    />
-                    <Image
-                        src="/tdesign_heart.png"
-                        alt="Heart Icon"
-                        width={12}
-                        height={12}
-                        className="ml-2"
-                    />
-                </div>
+
+                    <div className="flex items-center mt-2 text-gray-600 text-[11px]">
+                        <Image
+                            src="/location.png"
+                            alt="Location Icon"
+                            width={12}
+                            height={12}
+                            className="mr-1"
+                        />
+                        Lagos, Nigeria
+                        <Image
+                            src="/tabler_flag.png"
+                            alt="Heart Icon"
+                            width={12}
+                            height={12}
+                            className="ml-2"
+                        />
+                        <Image
+                            src="/tdesign_heart.png"
+                            alt="Heart Icon"
+                            width={12}
+                            height={12}
+                            className="ml-2"
+                        />
+                    </div>
                 </div>
             </div>
         </section>
